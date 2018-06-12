@@ -29,8 +29,7 @@ public class Features_Activity extends AppCompatActivity {
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mFeaturesTextView.setTypeface(cool);
         mNextButton.setTypeface(cool);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.activity_list_item, features);
         mlistView.setAdapter(adapter);
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -39,6 +38,5 @@ public class Features_Activity extends AppCompatActivity {
                 Toast.makeText(Features_Activity.this, feature,Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }
