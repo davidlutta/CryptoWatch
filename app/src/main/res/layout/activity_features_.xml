@@ -23,4 +23,14 @@
         >
     </ListView>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="next"
+        android:background="@color/colorPrimary"
+        android:id="@+id/nextButton"
+        android:textColor="@color/textLight"
+        android:textStyle="bold"
+        />
 </RelativeLayout>
