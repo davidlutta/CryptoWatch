@@ -23,6 +23,7 @@
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
+        android:id="@+id/searchEditText"
         android:text="BitCoin"
         android:textColor="@color/textLight"
         />
@@ -31,6 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:id="@+id/searchButton"
         android:background="@color/colorPrimary"
         android:text="Search"
         android:textColor="@color/textLight"
