@@ -18,7 +18,11 @@
         </activity>
         <activity android:name=".Features_Activity" />
         <activity android:name=".Search_Activity" />
-        <activity android:name=".Results_Activity"></activity>
+        <activity android:name=".Results_Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidlutta.galactic_ninja.cryptowatch.Search_Activity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
