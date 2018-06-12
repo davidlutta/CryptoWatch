@@ -1,8 +1,10 @@
 package com.davidlutta.galactic_ninja.cryptowatch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,5 +27,12 @@ public class MainActivity extends AppCompatActivity {
         mBeginButton.setTypeface(cool);
         mToTextView.setTypeface(cool);
         mWelcomeTextView.setTypeface(cool);
+        mBeginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Features_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
