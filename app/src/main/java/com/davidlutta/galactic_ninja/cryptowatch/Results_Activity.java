@@ -1,5 +1,6 @@
 package com.davidlutta.galactic_ninja.cryptowatch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,5 +33,6 @@ public class Results_Activity extends AppCompatActivity {
                 Toast.makeText(Results_Activity.this, feature,Toast.LENGTH_LONG).show();
             }
         });
+//        Intent intent
     }
 }

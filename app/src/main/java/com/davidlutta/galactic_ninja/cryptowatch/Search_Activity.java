@@ -1,5 +1,6 @@
 package com.davidlutta.galactic_ninja.cryptowatch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,5 +24,9 @@ public class Search_Activity extends AppCompatActivity {
         mSearchButton.setTypeface(cool);
         mSearchEditText.setTypeface(cool);
         mSearchTextView.setTypeface(cool);
+        String currency = mSearchEditText.getText().toString();
+        Intent intent =new Intent(Search_Activity.this,Results_Activity.class);
+        intent.putExtra("currency",currency);
+        startActivity(intent);
     }
 }
