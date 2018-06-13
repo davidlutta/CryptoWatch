@@ -24,7 +24,7 @@ public class Results_Activity extends AppCompatActivity {
 
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mResultView.setTypeface(cool);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_2, cryptoCurrencies);
+        ResultArrayAdapter adapter = new ResultArrayAdapter(this,android.R.layout.simple_list_item_2, cryptoCurrencies);
         ResultListView.setAdapter(adapter);
         ResultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
