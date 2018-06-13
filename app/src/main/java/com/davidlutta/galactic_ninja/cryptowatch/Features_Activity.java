@@ -29,7 +29,7 @@ public class Features_Activity extends AppCompatActivity {
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mFeaturesTextView.setTypeface(cool);
         mNextButton.setTypeface(cool);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.activity_list_item, features);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_2, features);
         mlistView.setAdapter(adapter);
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
