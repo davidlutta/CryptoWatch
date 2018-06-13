@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class Search_Activity extends AppCompatActivity {
     @Bind(R.id.searchTextView) TextView mSearchTextView;
@@ -20,10 +21,12 @@ public class Search_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_);
 
+        ButterKnife.bind(this);
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mSearchButton.setTypeface(cool);
         mSearchEditText.setTypeface(cool);
         mSearchTextView.setTypeface(cool);
+        
         String currency = mSearchEditText.getText().toString();
         Intent intent =new Intent(Search_Activity.this,Results_Activity.class);
         intent.putExtra("currency",currency);

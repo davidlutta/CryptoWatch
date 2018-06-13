@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class Results_Activity extends AppCompatActivity {
     @Bind(R.id.resultTextView) TextView mResultView;
@@ -21,7 +22,7 @@ public class Results_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_);
-
+        ButterKnife.bind(this);
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mResultView.setTypeface(cool);
         ResultArrayAdapter adapter = new ResultArrayAdapter(this,android.R.layout.simple_list_item_1, cryptoCurrencies);

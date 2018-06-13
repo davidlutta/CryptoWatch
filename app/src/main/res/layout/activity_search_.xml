@@ -24,7 +24,6 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
         android:id="@+id/searchEditText"
-        android:text="BitCoin"
         android:textColor="@color/textLight"
         />
     <Button
