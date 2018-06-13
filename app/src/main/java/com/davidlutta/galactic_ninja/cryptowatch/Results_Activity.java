@@ -33,6 +33,8 @@ public class Results_Activity extends AppCompatActivity {
                 Toast.makeText(Results_Activity.this, feature,Toast.LENGTH_LONG).show();
             }
         });
-//        Intent intent
+        Intent intent = getIntent();
+        String currency = intent.getStringExtra("currency");
+        mResultView.setText("Search Results for : " + currency);
     }
 }
