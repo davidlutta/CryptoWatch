@@ -12,4 +12,15 @@ public class FeaturesArrayAdapter extends ArrayAdapter {
         this.mContext = mContext;
         this.mFeatures = mFeatures;
     }
+
+    @Override
+    public Object getItem(int position) {
+        String feature = mFeatures[position];
+        return String.format("We %s", feature);
+    }
+
+    @Override
+    public int getCount() {
+        return mFeatures.length;
+    }
 }
