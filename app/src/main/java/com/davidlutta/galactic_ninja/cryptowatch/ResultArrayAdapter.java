@@ -16,7 +16,7 @@ public class ResultArrayAdapter extends ArrayAdapter {
     @Override
     public Object getItem(int position) {
         String currency = mCryptoCurrencies[position];
-        return String.format("We %s", currency);
+        return String.format("- %s", currency);
     }
 
     @Override

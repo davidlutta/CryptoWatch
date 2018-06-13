@@ -15,7 +15,7 @@ import butterknife.Bind;
 
 public class Results_Activity extends AppCompatActivity {
     @Bind(R.id.resultTextView) TextView mResultView;
-    @Bind(R.id.ResultlistView) ListView ResultListView;
+    @Bind(R.id.ResultlistView) ListView mResultListView;
     private String[] cryptoCurrencies = {"bitcoin","Etherium","lightCoin"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,9 @@ public class Results_Activity extends AppCompatActivity {
 
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mResultView.setTypeface(cool);
-        ResultArrayAdapter adapter = new ResultArrayAdapter(this,android.R.layout.simple_list_item_2, cryptoCurrencies);
-        ResultListView.setAdapter(adapter);
-        ResultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ResultArrayAdapter adapter = new ResultArrayAdapter(this,android.R.layout.simple_list_item_1, cryptoCurrencies);
+        mResultListView.setAdapter(adapter);
+        mResultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String feature = ((TextView)view).getText().toString();
