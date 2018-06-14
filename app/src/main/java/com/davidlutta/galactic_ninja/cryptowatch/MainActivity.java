@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mBeginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Features_Activity.class);
+                Intent intent = new Intent(MainActivity.this, Login_Activity.class);
                 startActivity(intent);
             }
         });
