@@ -27,12 +27,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Login_Activity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener{
-
-    @Bind(R.id.prof) LinearLayout mProfile;
-    @Bind(R.id.signOut) Button mSignOut;
-    @Bind(R.id.Name) TextView mName;
-    @Bind(R.id.Email) TextView mEmail;
-    @Bind(R.id.image) ImageView mImageUrl;
     @Bind(R.id.googleSignIn) SignInButton mGoogleSignIn;
     @Bind(R.id.textSnippet) TextView mTextSnippet;
     @Bind(R.id.logoName) TextView mLogoName;
@@ -45,8 +39,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_login_);
         ButterKnife.bind(this);
         mGoogleSignIn.setOnClickListener(this);
-        mSignOut.setOnClickListener(this);
-        mProfile.setVisibility(View.GONE);
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
@@ -62,10 +54,12 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()){
             case R.id.googleSignIn:
                 signIn();
+                Intent intent = new Intent(Login_Activity.this, Features_Activity.class);
+                startActivity(intent);
                 break;
-            case R.id.signOut:
-                signOut();
-                break;
+//            case R.id.signOut:
+//                signOut();
+//                break;
         }
 
     }
@@ -96,11 +90,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
             GoogleSignInAccount account = result.getSignInAccount();
             String name = account.getDisplayName();
             String email = account.getEmail();
-//            String img_url = account.getPhotoUrl().toString();
-
-            mName.setText(name);
-            mEmail.setText(email);
-//            Glide.with(this).load(img_url).into(mImageUrl);
             updateLogin(true);
         }
         else {
@@ -111,10 +100,10 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
     private void updateLogin(boolean isLogin){
         if (isLogin){
-            mProfile.setVisibility(View.VISIBLE);
+//            mProfile.setVisibility(View.VISIBLE);
         }
         else {
-            mProfile.setVisibility(View.GONE);
+//            mProfile.setVisibility(View.GONE);
         }
     }
 
