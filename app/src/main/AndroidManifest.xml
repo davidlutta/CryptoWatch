@@ -25,7 +25,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.Search_Activity" />
         </activity>
-        <activity android:name=".Login_Activity"></activity>
+        <activity android:name=".Login_Activity" />
+        <activity android:name=".FeedActivity"></activity>
     </application>
 
 </manifest>
