@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,53 +7,21 @@
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context=".Login_Activity">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/prof"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
         android:background="@color/colorPrimary"
-        >
-        <ImageView
-            android:src="@drawable/bitcoin"
-            android:layout_width="150dp"
-            android:layout_height="300dp"
-            android:id="@+id/image"
-            ></ImageView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="100dp"
-            android:textColor="@color/textLight"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:id="@+id/Name"
-            />
-    </LinearLayout>
+        android:rad
+        ></LinearLayout>
 
-    <TextView
-        android:id="@+id/Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="00dp"
-        android:textAlignment="center"
-        android:textColor="@color/textLight"
-        android:textSize="25sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log out"
-        android:id="@+id/signOut"
-        />
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/googleSignIn"
         ></com.google.android.gms.common.SignInButton>
-</LinearLayout>
+</RelativeLayout>
