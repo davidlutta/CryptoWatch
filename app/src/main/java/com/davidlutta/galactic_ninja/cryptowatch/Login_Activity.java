@@ -1,6 +1,7 @@
 package com.davidlutta.galactic_ninja.cryptowatch;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,8 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
     @Bind(R.id.Email) TextView mEmail;
     @Bind(R.id.image) ImageView mImageUrl;
     @Bind(R.id.googleSignIn) SignInButton mGoogleSignIn;
+    @Bind(R.id.textSnippet) TextView mTextSnippet;
+    @Bind(R.id.logoName) TextView mLogoName;
     private GoogleApiClient googleApiClient;
     private static final int REQ_CODE = 9001;
 
@@ -47,6 +50,10 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
+
+        Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
+        mTextSnippet.setTypeface(cool);
+        mLogoName.setTypeface(cool);
     }
 
     @Override
