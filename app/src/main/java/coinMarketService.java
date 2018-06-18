@@ -1,3 +1,5 @@
+import android.util.Log;
+
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -10,6 +12,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.security.auth.callback.Callback;
@@ -39,14 +42,16 @@ public class coinMarketService {
 
         try {
             String jsonData = response.body().toString();
+            Gson gson = new GsonBuilder().create();
             if (response.isSuccessful()){
                 JSONObject coinMarketJSON = new JSONObject(jsonData);
-                JSONArray currenciesJSON = coinMarketJSON.getJSONArray("currencies");
+                for (Iterator<String> data = coinMarketJSON.keys(); data.hasNext();) {
+                    Object key = data.next();
 
-                Type collectionType = new TypeToken<List<Results>>() {}.getType();
-                Gson gson = new GsonBuilder().create();
+                    Log.d("Result: ", key.toString());
+                    Results results = gson.fromJson(coinMarketJSON.getJSONObject(key.toString()).toString(),Results.class);
 
-                currencies = gson.fromJson(currenciesJSON.toString(), collectionType);
+                }
             }
         } catch (NullPointerException e) {
             e.printStackTrace();
