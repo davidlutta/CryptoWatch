@@ -45,6 +45,9 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
     public class FeedViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.nameTextView)TextView mCurrencyName;
         @Bind(R.id.symbol) ImageView mSymbol;
+        @Bind(R.id.priceTextView) TextView mPrice;
+        @Bind(R.id.rankTextView) TextView mRank;
+        @Bind(R.id.changeTextView) TextView mChange;
         public FeedViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -61,6 +64,9 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
                     .buildRound(first, color);
             mSymbol.setImageDrawable(drawable);
             mCurrencyName.setText(currencyModel.getName());
+            mRank.setText("Rank: "+ currencyModel.getRank());
+            mPrice.setText("Price: $    "+currencyModel.getQuotes().getUSD().getPrice());
+
         }
     }
 }

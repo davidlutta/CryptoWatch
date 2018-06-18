@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="10dp"
         android:layout_centerHorizontal="true"
         >
         <ImageView
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             tools:text="Name"
             android:textColor="@color/textLight"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:id="@+id/nameTextView"
             />
         <TextView
@@ -31,8 +32,24 @@
             android:layout_height="wrap_content"
             tools:text="Name"
             android:textColor="@color/textLight"
-            android:textSize="40sp"
-            android:id="@+id/tom"
+            android:textSize="20sp"
+            android:id="@+id/rankTextView"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Name"
+            android:textColor="@color/textLight"
+            android:textSize="20sp"
+            android:id="@+id/priceTextView"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Name"
+            android:textColor="@color/textLight"
+            android:textSize="20sp"
+            android:id="@+id/changeTextView"
             />
     </LinearLayout>
 
