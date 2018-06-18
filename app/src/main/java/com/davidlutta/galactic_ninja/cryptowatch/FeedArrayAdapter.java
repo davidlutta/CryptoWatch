@@ -6,8 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
 
 import java.util.ArrayList;
@@ -41,7 +44,7 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
 
     public class FeedViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.nameTextView)TextView mCurrencyName;
-
+        @Bind(R.id.symbol) ImageView mSymbol;
         public FeedViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -49,8 +52,15 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
         }
 
         public void bindResults(Results currencyModel) {
+            String first = currencyModel.getSymbol();
+
+            ColorGenerator colorGenerator = ColorGenerator.MATERIAL;
+            int color = colorGenerator.getRandomColor();
+
+            TextDrawable drawable = TextDrawable.builder()
+                    .buildRound(first, color);
+            mSymbol.setImageDrawable(drawable);
             mCurrencyName.setText(currencyModel.getName());
-            Log.d("recyclerview", "bindResults: " + currencyModel.getName());
         }
     }
 }

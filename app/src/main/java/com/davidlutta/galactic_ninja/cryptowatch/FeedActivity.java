@@ -52,9 +52,7 @@ public class FeedActivity extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FeedActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
-                        for (Results result : mResults){
-                            Log.d("info :", result.getName());
-                        }
+
                     }
                 });
             }
