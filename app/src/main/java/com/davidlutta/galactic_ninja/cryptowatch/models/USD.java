@@ -11,10 +11,10 @@ public class USD {
     private Double price;
     @SerializedName("volume_24h")
     @Expose
-    private Integer volume24h;
+    private Double volume24h;
     @SerializedName("market_cap")
     @Expose
-    private Integer marketCap;
+    private Long marketCap;
     @SerializedName("percent_change_1h")
     @Expose
     private Double percentChange1h;
@@ -41,7 +41,7 @@ public class USD {
      * @param percentChange7d
      * @param percentChange1h
      */
-    public USD(Double price, Integer volume24h, Integer marketCap, Double percentChange1h, Double percentChange24h, Double percentChange7d) {
+    public USD(Double price, Double volume24h, Long marketCap, Double percentChange1h, Double percentChange24h, Double percentChange7d) {
         super();
         this.price = price;
         this.volume24h = volume24h;
@@ -59,19 +59,19 @@ public class USD {
         this.price = price;
     }
 
-    public Integer getVolume24h() {
+    public Double getVolume24h() {
         return volume24h;
     }
 
-    public void setVolume24h(Integer volume24h) {
+    public void setVolume24h(Double volume24h) {
         this.volume24h = volume24h;
     }
 
-    public Integer getMarketCap() {
+    public Long getMarketCap() {
         return marketCap;
     }
 
-    public void setMarketCap(Integer marketCap) {
+    public void setMarketCap(Long marketCap) {
         this.marketCap = marketCap;
     }
 

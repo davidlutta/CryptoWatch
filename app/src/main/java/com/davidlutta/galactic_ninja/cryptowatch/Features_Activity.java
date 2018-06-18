@@ -42,7 +42,7 @@ public class Features_Activity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Features_Activity.this, Search_Activity.class);
+                Intent intent = new Intent(Features_Activity.this, FeedActivity.class);
                 startActivity(intent);
             }
         });

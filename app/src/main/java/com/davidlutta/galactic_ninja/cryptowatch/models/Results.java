@@ -8,7 +8,7 @@ public class Results {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Long id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -20,22 +20,22 @@ public class Results {
     private String websiteSlug;
     @SerializedName("rank")
     @Expose
-    private Integer rank;
+    private Long rank;
     @SerializedName("circulating_supply")
     @Expose
-    private Integer circulatingSupply;
+    private Long circulatingSupply;
     @SerializedName("total_supply")
     @Expose
-    private Integer totalSupply;
+    private Long totalSupply;
     @SerializedName("max_supply")
     @Expose
-    private Integer maxSupply;
+    private Long maxSupply;
     @SerializedName("quotes")
     @Expose
     private Quotes quotes;
     @SerializedName("last_updated")
     @Expose
-    private Integer lastUpdated;
+    private Long lastUpdated;
 
     /**
      * No args constructor for use in serialization
@@ -57,7 +57,7 @@ public class Results {
      * @param lastUpdated
      * @param totalSupply
      */
-    public Results(Integer id, String name, String symbol, String websiteSlug, Integer rank, Integer circulatingSupply, Integer totalSupply, Integer maxSupply, Quotes quotes, Integer lastUpdated) {
+    public Results(Long id, String name, String symbol, String websiteSlug, Long rank, Long circulatingSupply, Long totalSupply, Long maxSupply, Quotes quotes, Long lastUpdated) {
         super();
         this.id = id;
         this.name = name;
@@ -71,11 +71,11 @@ public class Results {
         this.lastUpdated = lastUpdated;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -103,35 +103,35 @@ public class Results {
         this.websiteSlug = websiteSlug;
     }
 
-    public Integer getRank() {
+    public Long getRank() {
         return rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(Long rank) {
         this.rank = rank;
     }
 
-    public Integer getCirculatingSupply() {
+    public Long getCirculatingSupply() {
         return circulatingSupply;
     }
 
-    public void setCirculatingSupply(Integer circulatingSupply) {
+    public void setCirculatingSupply(Long circulatingSupply) {
         this.circulatingSupply = circulatingSupply;
     }
 
-    public Integer getTotalSupply() {
+    public Long getTotalSupply() {
         return totalSupply;
     }
 
-    public void setTotalSupply(Integer totalSupply) {
+    public void setTotalSupply(Long totalSupply) {
         this.totalSupply = totalSupply;
     }
 
-    public Integer getMaxSupply() {
+    public Long getMaxSupply() {
         return maxSupply;
     }
 
-    public void setMaxSupply(Integer maxSupply) {
+    public void setMaxSupply(Long maxSupply) {
         this.maxSupply = maxSupply;
     }
 
@@ -143,11 +143,11 @@ public class Results {
         this.quotes = quotes;
     }
 
-    public Integer getLastUpdated() {
+    public Long getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(Integer lastUpdated) {
+    public void setLastUpdated(Long lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
