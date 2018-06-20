@@ -52,6 +52,13 @@
             android:textSize="20sp"
             android:id="@+id/changeTextView"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Details"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/textLight"
+            />
     </LinearLayout>
 
 
