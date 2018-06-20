@@ -110,7 +110,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_above="@+id/saveCurrencyButton"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -156,7 +156,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/saveRestaurantButton"
+                android:id="@+id/saveCurrencyButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
