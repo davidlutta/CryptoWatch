@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters.FeedArrayAdapter;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.davidlutta.galactic_ninja.cryptowatch.Services.coinMarketService;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;

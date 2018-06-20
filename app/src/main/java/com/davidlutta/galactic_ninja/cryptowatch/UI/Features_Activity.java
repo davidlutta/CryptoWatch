@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters.FeaturesArrayAdapter;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 
 import butterknife.Bind;

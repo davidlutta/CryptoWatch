@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters.ResultArrayAdapter;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 
 import butterknife.Bind;
