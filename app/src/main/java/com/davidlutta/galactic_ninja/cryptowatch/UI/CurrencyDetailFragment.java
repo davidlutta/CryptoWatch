@@ -31,6 +31,7 @@ public class CurrencyDetailFragment extends Fragment {
     @Bind(R.id.percDayTextView) TextView mPercDay;
     @Bind(R.id.percWeekTextView) TextView mPercWeek;
     @Bind(R.id.saveCurrencyButton) Button mSaveCurrency;
+    @Bind(R.id.UpdateTextView) TextView mTime;
     @Bind(R.id.symbol) ImageView mSymbol;
 
     private Results mResults;
@@ -69,6 +70,8 @@ public class CurrencyDetailFragment extends Fragment {
         mMarkCap.setText("Market Supply: "+mResults.getQuotes().getUSD().getMarketCap());
         mPercDay.setText("Percentage Change Every 24 hours: "+mResults.getQuotes().getUSD().getPercentChange24h()+"%");
         mPercWeek.setText("Percentage Change Every Week: "+mResults.getQuotes().getUSD().getPercentChange7d()+"%");
+
+        mTime.setText("Last Update: "+mResults.getLastUpdated());
         return view;
 
     }
