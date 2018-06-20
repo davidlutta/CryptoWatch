@@ -1,7 +1,8 @@
-package com.davidlutta.galactic_ninja.cryptowatch;
+package com.davidlutta.galactic_ninja.cryptowatch.Services;
 
 import android.util.Log;
 
+import com.davidlutta.galactic_ninja.cryptowatch.Constants;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

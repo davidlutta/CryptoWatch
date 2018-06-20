@@ -1,4 +1,4 @@
-package com.davidlutta.galactic_ninja.cryptowatch;
+package com.davidlutta.galactic_ninja.cryptowatch.UI;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.davidlutta.galactic_ninja.cryptowatch.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

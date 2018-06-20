@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CurrencyDetailsActivity">
+    android:background="@color/colorPrimary"
+    tools:context=".UI.CurrencyDetailsActivity">
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewPager"
+        >
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pagerHeader"
+            android:foregroundGravity="top"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            ></android.support.v4.view.PagerTabStrip>
+    </android.support.v4.view.ViewPager>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

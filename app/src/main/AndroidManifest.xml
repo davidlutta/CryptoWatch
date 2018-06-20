@@ -11,23 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Features_Activity" />
-        <activity android:name=".Search_Activity" />
-        <activity android:name=".Results_Activity">
+        <activity android:name=".UI.Features_Activity" />
+        <activity android:name=".UI.Search_Activity" />
+        <activity android:name=".UI.Results_Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.davidlutta.galactic_ninja.cryptowatch.Search_Activity" />
+                android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.Search_Activity" />
         </activity>
-        <activity android:name=".Login_Activity" />
-        <activity android:name=".FeedActivity" />
-        <activity android:name=".CurrencyDetailsActivity"></activity>
+        <activity android:name=".UI.Login_Activity" />
+        <activity android:name=".UI.FeedActivity" />
+        <activity android:name=".UI.CurrencyDetailsActivity"></activity>
     </application>
 
 </manifest>

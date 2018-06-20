@@ -1,4 +1,4 @@
-package com.davidlutta.galactic_ninja.cryptowatch;
+package com.davidlutta.galactic_ninja.cryptowatch.UI;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

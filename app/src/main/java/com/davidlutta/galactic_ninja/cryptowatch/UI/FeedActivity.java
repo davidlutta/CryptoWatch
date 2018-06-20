@@ -1,12 +1,13 @@
-package com.davidlutta.galactic_ninja.cryptowatch;
+package com.davidlutta.galactic_ninja.cryptowatch.UI;
 
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
+import com.davidlutta.galactic_ninja.cryptowatch.R;
+import com.davidlutta.galactic_ninja.cryptowatch.Services.coinMarketService;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
 
 import java.io.IOException;
