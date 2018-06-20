@@ -61,7 +61,6 @@ public class CurrencyDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_currency_detail, container, false);
         ButterKnife.bind(this, view);
-
         mCurrencyName.setText(mResults.getName());
         mRank.setText("Rank: "+mResults.getRank());
         mPrice.setText("Price: $"+mResults.getQuotes().getUSD().getPrice());
