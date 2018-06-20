@@ -51,10 +51,8 @@ public class coinMarketService {
                 JSONObject dataJSON = coinMarketJSON.getJSONObject("data");
                 for (Iterator<String> data = dataJSON.keys(); data.hasNext();) {
                     Object key = data.next();
-                    Log.d("Result: ", key.toString());
                     Results results = gson.fromJson(dataJSON.getJSONObject(key.toString()).toString(), Results.class);
                     currencies.add(results);
-                    Log.d("rrrrrr: ", results.getName());
                 }
             }
         } catch (NullPointerException | JSONException | IOException e) {

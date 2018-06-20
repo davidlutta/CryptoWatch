@@ -64,7 +64,7 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, CurrencyDetailsActivity.class);
             intent.putExtra("position", itemPosition);
-            intent.putExtra("restaurants", Parcels.wrap(mResults));
+            intent.putExtra("results", Parcels.wrap(mResults));
             mContext.startActivity(intent);
         }
 

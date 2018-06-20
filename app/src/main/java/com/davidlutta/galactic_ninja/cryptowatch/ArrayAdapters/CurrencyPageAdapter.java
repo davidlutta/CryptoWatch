@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class CurrencyPageAdapter extends FragmentPagerAdapter {
     private ArrayList<Results> mResults;
-
     public CurrencyPageAdapter(FragmentManager fm, ArrayList<Results> results){
         super(fm);
         mResults = results;

@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
-                android:text="Save Restaurant"
+                android:text="Save Coin"
                 android:textColor="@color/textLight"
                 android:textSize="15sp" />
         </RelativeLayout>
