@@ -3,12 +3,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.CurrencyDetailFragment">
-
+    tools:context=".UI.CurrencyDetailFragment"
+    android:background="@color/colorPrimary"
+    >
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/colorPrimary">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/symbol"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Currency Name"
+                android:id="@+id/CurrencyNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rank: "
+                android:id="@+id/rankTextView"
+                android:layout_alignTop="@+id/CurrencyNameTextView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price in USD"
+                android:id="@+id/priceTextView"
+                android:layout_below="@+id/CurrencyNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maximum Supply"
+                android:id="@+id/MaximumSupTextView"
+                android:drawablePadding="4dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_below="@id/priceTextView"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Circulating Supply"
+                android:id="@+id/CirculatingSupTextView"
+                android:drawablePadding="4dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_below="@id/MaximumSupTextView"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Update"
+                android:id="@+id/UpdateTextView"
+                android:drawablePadding="4dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_below="@id/CirculatingSupTextView"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/saveRestaurantButton"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingRight="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Market Capital"
+                    android:id="@+id/MarkCapTextView"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/textLight"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage Change per Day"
+                    android:drawablePadding="4dp"
+                    android:id="@+id/percDayTextView"
+                    android:textColor="@color/textLight"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage Change per Week"
+                    android:drawablePadding="4dp"
+                    android:id="@+id/percWeekTextView"
+                    android:textColor="@color/textLight"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"/>
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Restaurant"
+                android:id="@+id/saveRestaurantButton"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorAccent"
+                android:textColor="@color/textLight"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
 </FrameLayout>
