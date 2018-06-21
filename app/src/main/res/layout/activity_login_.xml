@@ -26,6 +26,7 @@
             android:layout_weight="1"
             />
         <TextView
+            android:id="@+id/CryptoWatchTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CryptoWatch"
@@ -34,18 +35,21 @@
             android:textColor="@color/textLight"
             />
         <EditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Email"
             android:background="@color/textLight"
             />
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Password"
             android:background="@color/textLight"
             />
         <Button
+            android:id="@+id/loginButton"
             android:layout_width="350dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -54,7 +58,6 @@
             android:background="@color/colorPrimaryDark"
             android:elevation="50dp"
             />
-
         <com.google.android.gms.common.SignInButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,10 +66,12 @@
             >
         </com.google.android.gms.common.SignInButton>
         <TextView
+            android:id="@+id/RegisterTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Don't have an Account ? Sign up Here!"
             android:textAlignment="center"
+            android:textStyle="bold"
             android:textColor="@color/textLight"
             android:layout_weight="1"
             android:textSize="15sp"

@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
@@ -25,8 +27,11 @@ import butterknife.ButterKnife;
 
 public class Login_Activity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener{
     @Bind(R.id.googleSignIn) SignInButton mGoogleSignIn;
-    @Bind(R.id.textSnippet) TextView mTextSnippet;
-    @Bind(R.id.logoName) TextView mLogoName;
+    @Bind(R.id.CryptoWatchTextView) TextView mLogoName;
+    @Bind(R.id.emailEditText) EditText mEmail;
+    @Bind(R.id.passwordEditText) EditText mPassword;
+    @Bind(R.id.loginButton) Button mLogin;
+    @Bind(R.id.RegisterTextView) TextView mRegister;
     private GoogleApiClient googleApiClient;
     private static final int REQ_CODE = 9001;
 
@@ -41,8 +46,13 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
 
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
-        mTextSnippet.setTypeface(cool);
         mLogoName.setTypeface(cool);
+        mEmail.setTypeface(cool);
+        mPassword.setTypeface(cool);
+        mLogin.setTypeface(cool);
+        mRegister.setTypeface(cool);
+
+        mRegister.setOnClickListener(this);
     }
 
     @Override
@@ -51,12 +61,15 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()){
             case R.id.googleSignIn:
                 signIn();
-                Intent intent = new Intent(Login_Activity.this, Features_Activity.class);
+                Intent intent = new Intent(Login_Activity.this, FeedActivity.class);
                 startActivity(intent);
                 break;
 //            case R.id.signOut:
 //                signOut();
 //                break;
+
+            case R.id.RegisterTextView:
+                Intent intent1 = new Intent(Login_Activity.this,ZZ);
         }
 
     }
