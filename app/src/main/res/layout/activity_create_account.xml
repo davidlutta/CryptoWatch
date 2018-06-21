@@ -93,6 +93,7 @@
             android:elevation="50dp"
             />
         <TextView
+            android:id="@+id/loginTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/textLight"
