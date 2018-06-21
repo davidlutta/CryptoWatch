@@ -11,34 +11,34 @@ public class Results {
 
     @SerializedName("id")
     @Expose
-    private Long id;
+     Long id;
     @SerializedName("name")
     @Expose
-    private String name;
+     String name;
     @SerializedName("symbol")
     @Expose
-    private String symbol;
+     String symbol;
     @SerializedName("website_slug")
     @Expose
-    private String websiteSlug;
+     String websiteSlug;
     @SerializedName("rank")
     @Expose
-    private Long rank;
+     Long rank;
     @SerializedName("circulating_supply")
     @Expose
-    private Long circulatingSupply;
+     Long circulatingSupply;
     @SerializedName("total_supply")
     @Expose
-    private Long totalSupply;
+     Long totalSupply;
     @SerializedName("max_supply")
     @Expose
-    private Long maxSupply;
+     Long maxSupply;
     @SerializedName("quotes")
     @Expose
-    private Quotes quotes;
+     Quotes quotes;
     @SerializedName("last_updated")
     @Expose
-    private Long lastUpdated;
+     Long lastUpdated;
 
     /**
      * No args constructor for use in serialization

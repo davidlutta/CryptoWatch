@@ -11,7 +11,7 @@ public class Quotes {
 
     @SerializedName("USD")
     @Expose
-    private USD uSD;
+     USD uSD;
 
     /**
      * No args constructor for use in serialization

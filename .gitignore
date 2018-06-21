@@ -11,3 +11,4 @@ build
 .credentials.json
 /app/src/main/java/com/davidlutta/galactic_ninja/cryptowatch/Constants
 gradle.properties
+/app/google-services.json

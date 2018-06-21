@@ -11,22 +11,22 @@ public class USD {
 
     @SerializedName("price")
     @Expose
-    private Double price;
+     Double price;
     @SerializedName("volume_24h")
     @Expose
-    private Double volume24h;
+     Double volume24h;
     @SerializedName("market_cap")
     @Expose
-    private Long marketCap;
+     Long marketCap;
     @SerializedName("percent_change_1h")
     @Expose
-    private Double percentChange1h;
+     Double percentChange1h;
     @SerializedName("percent_change_24h")
     @Expose
-    private Double percentChange24h;
+     Double percentChange24h;
     @SerializedName("percent_change_7d")
     @Expose
-    private Double percentChange7d;
+     Double percentChange7d;
 
     /**
      * No args constructor for use in serialization

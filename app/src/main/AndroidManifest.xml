@@ -19,8 +19,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.Search_Activity" />
         </activity>
-        <activity android:name=".UI.Login_Activity" />
-        <activity android:name=".UI.FeedActivity">
+        <activity android:name=".UI.FeedActivity" />
+        <activity android:name=".UI.Login_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
