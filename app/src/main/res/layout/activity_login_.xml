@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
+    android:background="@color/textLight"
     tools:context=".UI.Login_Activity">
 
     <LinearLayout
         android:layout_width="350dp"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
+        android:elevation="50dp"
         android:background="@drawable/layout_bg"
         android:orientation="vertical"
         >
@@ -22,35 +23,54 @@
             android:layout_marginLeft="75dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/bitcoin"
+            android:layout_weight="1"
             />
         <TextView
-            android:id="@+id/logoName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CryptoWatch"
-            android:textAlignment="center"
             android:textSize="40sp"
+            android:textAlignment="center"
             android:textColor="@color/textLight"
             />
-
-        <TextView
-            android:id="@+id/textSnippet"
+        <EditText
             android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:background="@color/textLight"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:background="@color/textLight"
+            />
+        <Button
+            android:layout_width="350dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="sign up with Google"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
+            android:text="Log in"
             android:textColor="@color/textLight"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="50dp"
             />
 
         <com.google.android.gms.common.SignInButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:id="@+id/googleSignIn"
             >
         </com.google.android.gms.common.SignInButton>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an Account ? Sign up Here!"
+            android:textAlignment="center"
+            android:textColor="@color/textLight"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            />
     </LinearLayout>
 
 

@@ -70,7 +70,6 @@ public class CurrencyDetailFragment extends Fragment {
         mMarkCap.setText("Market Supply: "+mResults.getQuotes().getUSD().getMarketCap());
         mPercDay.setText("Percentage Change Every 24 hours: "+mResults.getQuotes().getUSD().getPercentChange24h()+"%");
         mPercWeek.setText("Percentage Change Every Week: "+mResults.getQuotes().getUSD().getPercentChange7d()+"%");
-
         mTime.setText("Last Update: "+mResults.getLastUpdated());
         return view;
 
