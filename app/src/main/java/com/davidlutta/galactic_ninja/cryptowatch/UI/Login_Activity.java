@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.davidlutta.galactic_ninja.cryptowatch.CreateAccount;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -53,6 +54,7 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         mRegister.setTypeface(cool);
 
         mRegister.setOnClickListener(this);
+        mLogin.setOnClickListener(this);
     }
 
     @Override
@@ -63,13 +65,18 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
                 signIn();
                 Intent intent = new Intent(Login_Activity.this, FeedActivity.class);
                 startActivity(intent);
+                finish();
                 break;
 //            case R.id.signOut:
 //                signOut();
 //                break;
 
             case R.id.RegisterTextView:
-                Intent intent1 = new Intent(Login_Activity.this,ZZ);
+                Intent intent1 = new Intent(Login_Activity.this, CreateAccount.class);
+                startActivity(intent1);
+                finish();
+                break;
+
         }
 
     }
