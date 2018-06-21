@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.davidlutta.galactic_ninja.cryptowatch.CreateAccount;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;

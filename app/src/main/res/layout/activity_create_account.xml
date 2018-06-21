@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/textLight"
-    tools:context=".CreateAccount">
+    tools:context=".UI.CreateAccount">
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="wrap_content"
@@ -98,6 +98,7 @@
             android:textColor="@color/textLight"
             android:textAlignment="center"
             android:text="Have an account ? Log in Here"
+            android:textSize="15sp"
             />
     </LinearLayout>
 </RelativeLayout>

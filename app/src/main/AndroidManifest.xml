@@ -32,11 +32,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.FeedActivity" />
         </activity>
-        <activity
-            android:name=".CreateAccount"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_create_account"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".UI.CreateAccount"></activity>
     </application>
 
 </manifest>
