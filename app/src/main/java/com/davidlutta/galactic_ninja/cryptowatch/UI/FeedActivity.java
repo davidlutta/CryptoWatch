@@ -38,7 +38,7 @@ public class FeedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feed);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomMenuView);
 
-//        ButterKnife.bind(this);
+        ButterKnife.bind(this);
 
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,9 +49,9 @@ public class FeedActivity extends AppCompatActivity {
                             case R.id.bottombaritem_Home:
                                 selectedFragment = HomeFragment.newInstance();
                                 break;
-//                            case R.id.action_item2:
-//                                selectedFragment = ItemTwoFragment.newInstance();
-//                                break;
+                            case R.id.bottombaritem_News:
+                                selectedFragment = NewsFragment.newInstance();
+                                break;
 //                            case R.id.action_item3:
 //                                selectedFragment = ItemThreeFragment.newInstance();
 //                                break;
