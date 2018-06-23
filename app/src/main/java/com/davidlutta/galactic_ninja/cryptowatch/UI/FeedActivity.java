@@ -52,9 +52,9 @@ public class FeedActivity extends AppCompatActivity {
                             case R.id.bottombaritem_News:
                                 selectedFragment = NewsFragment.newInstance();
                                 break;
-//                            case R.id.action_item3:
-//                                selectedFragment = ItemThreeFragment.newInstance();
-//                                break;
+                            case R.id.bottombaritem_Profile:
+                                selectedFragment = ProfileFragment.newInstance();
+                                break;
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frameLayout, selectedFragment);

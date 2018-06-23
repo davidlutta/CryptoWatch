@@ -9,16 +9,17 @@ import android.view.ViewGroup;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 
-import butterknife.ButterKnife;
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewsFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    public static NewsFragment newInstance(){
-        NewsFragment fragment = new NewsFragment();
+    public static ProfileFragment newInstance(){
+        ProfileFragment fragment = new ProfileFragment();
         return fragment;
+    }
+    public ProfileFragment() {
+        // Required empty public constructor
     }
 
     @Override
@@ -30,7 +31,7 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root=inflater.inflate(R.layout.fragment_news, container, false);
+        View root=inflater.inflate(R.layout.fragment_profile, container, false);
         return root;
     }
 
