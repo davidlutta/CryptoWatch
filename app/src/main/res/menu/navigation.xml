@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/navigation_shop"
-        android:icon="@drawable/homeicon"
-        android:title="@string/title_feed" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/navigation_gifts"
-        android:icon="@drawable/newsicon"
-        android:title="@string/title_news" />
+<item
+    android:id="@+id/bottombaritem_News"
+    android:icon="@drawable/news"
+    android:title="News"
+    app:showAsAction="ifRoom"/>
 
-    <item
-        android:id="@+id/navigation_cart"
-        android:icon="@drawable/profileicon"
-        android:title="@string/title_profile" />
+<item
+    android:id="@+id/bottombaritem_Home"
+    android:icon="@drawable/home"
+    android:title="Home"
+    app:showAsAction="ifRoom"/>
+
+<item
+    android:id="@+id/bottombaritem_Profile"
+    android:icon="@drawable/profile"
+    android:title="Profile"
+    app:showAsAction="ifRoom"/>
 
 </menu>

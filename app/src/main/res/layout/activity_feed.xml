@@ -6,10 +6,26 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     tools:context=".UI.FeedActivity">
-    <android.support.v7.widget.RecyclerView
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerView"
-        />
+        android:layout_above="@+id/bottomMenuView"
+        android:animateLayoutChanges="true">
+
+    </FrameLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomMenuView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/colorPrimaryDark"
+        app:itemTextColor="@color/textLight"
+        app:menu="@menu/navigation">
+
+    </android.support.design.widget.BottomNavigationView>
+
 
 </RelativeLayout>

@@ -32,7 +32,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.FeedActivity" />
         </activity>
-        <activity android:name=".UI.CreateAccount"></activity>
+        <activity android:name=".UI.CreateAccount" />
+        <activity android:name=".UI.NewsActivity" />
+        <activity android:name=".UI.ProfileActivity"></activity>
     </application>
 
 </manifest>
