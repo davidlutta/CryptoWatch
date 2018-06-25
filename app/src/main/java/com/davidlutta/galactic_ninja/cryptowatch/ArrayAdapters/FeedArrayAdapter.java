@@ -51,7 +51,7 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
         @Bind(R.id.symbol) ImageView mSymbol;
         @Bind(R.id.priceTextView) TextView mPrice;
         @Bind(R.id.rankTextView) TextView mRank;
-        @Bind(R.id.changeTextView) TextView mChange;
+        @Bind(R.id.slugTextView) TextView mSlug;
         public FeedViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -69,7 +69,8 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
         }
 
         public void bindResults(Results currencyModel) {
-            String first = currencyModel.getSymbol();
+            char FirstChar = currencyModel.getWebsiteSlug().charAt(0);
+            String first = Character.toString(FirstChar).toUpperCase();
 
             ColorGenerator colorGenerator = ColorGenerator.MATERIAL;
             int color = colorGenerator.getRandomColor();
@@ -78,9 +79,9 @@ public class FeedArrayAdapter extends RecyclerView.Adapter<FeedArrayAdapter.Feed
                     .buildRound(first, color);
             mSymbol.setImageDrawable(drawable);
             mCurrencyName.setText(currencyModel.getName());
-            mRank.setText("Rank: "+ currencyModel.getRank());
-            mPrice.setText("Price: $ "+currencyModel.getQuotes().getUSD().getPrice());
-
+            mRank.setText(""+currencyModel.getRank());
+            mPrice.setText("$ "+currencyModel.getQuotes().getUSD().getPrice());
+            mSlug.setText(""+currencyModel.getWebsiteSlug());
         }
     }
 }

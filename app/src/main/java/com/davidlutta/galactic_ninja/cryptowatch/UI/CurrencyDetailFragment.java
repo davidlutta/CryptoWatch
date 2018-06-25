@@ -30,7 +30,6 @@ public class CurrencyDetailFragment extends Fragment {
     @Bind(R.id.MarkCapTextView) TextView mMarkCap;
     @Bind(R.id.percDayTextView) TextView mPercDay;
     @Bind(R.id.percWeekTextView) TextView mPercWeek;
-    @Bind(R.id.saveCurrencyButton) Button mSaveCurrency;
     @Bind(R.id.UpdateTextView) TextView mTime;
     @Bind(R.id.symbol) ImageView mSymbol;
 

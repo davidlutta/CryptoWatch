@@ -154,16 +154,6 @@
 
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/saveCurrencyButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorPrimaryDark"
-                android:text="Save Coin"
-                android:textColor="@color/textLight"
-                android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
