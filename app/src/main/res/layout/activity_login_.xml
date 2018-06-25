@@ -47,6 +47,7 @@
             android:layout_height="50dp"
             android:hint="Password"
             android:background="@color/textLight"
+            android:inputType="textPassword"
             />
         <Button
             android:id="@+id/loginButton"
