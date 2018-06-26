@@ -8,17 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
     @Bind(R.id.logOutButton) Button mLogOutButton;
+    @Bind(R.id.nameTextView)
+    TextView mUserName;
+    @Bind(R.id.EmailTextView) TextView mUserEmail;
 
     public static ProfileFragment newInstance(){
         ProfileFragment fragment = new ProfileFragment();
@@ -38,6 +45,14 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_profile, container, false);
+        ButterKnife.bind(this,root);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            mUserName.setText(name);
+            mUserEmail.setText(email);
+        }
         return root;
     }
 
@@ -50,11 +65,12 @@ public class ProfileFragment extends Fragment {
 //        }
 //    }
 //
-//    private void logOut(){
-//        FirebaseAuth.getInstance().signOut();
-//        Intent intent = new Intent(getActivity(), Login_Activity.class);
-//        startActivity(intent);
-//    }
+
+    @OnClick(R.id.logOutButton) void logOut(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getActivity(), Login_Activity.class);
+        startActivity(intent);
+    }
 
 
 
