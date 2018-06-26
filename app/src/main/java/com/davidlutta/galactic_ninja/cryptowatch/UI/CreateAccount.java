@@ -93,6 +93,17 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
+//        FirebaseAuth auth = FirebaseAuth.getInstance();
+//        FirebaseUser user = auth.getCurrentUser();
+//        user.sendEmailVerification()
+//                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(CreateAccount.this,"Email Sent", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
     }
 
     private void createAuthStateListener(){

@@ -4,26 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,8 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Login_Activity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener{
-    @Bind(R.id.googleSignIn) SignInButton mGoogleSignIn;
+public class Login_Activity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.CryptoWatchTextView) TextView mLogoName;
     @Bind(R.id.emailEditText) EditText mEmail;
     @Bind(R.id.passwordEditText) EditText mPassword;
@@ -99,10 +87,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
 
     private void loginWithPassword(){
         String email = mEmail.getText().toString().trim();
@@ -128,7 +112,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
                         }
                     }
                 });
-
     }
 
     @Override
