@@ -4,11 +4,7 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
-.DS_Store
 build
-/captures
-.externalNativeBuild
-.credentials.json
-/app/src/main/java/com/davidlutta/galactic_ninja/cryptowatch/Constants
 gradle.properties
 /app/google-services.json
+/app/src/main/java/com/davidlutta/galactic_ninja/cryptowatch/Constants.java

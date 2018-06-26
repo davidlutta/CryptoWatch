@@ -32,13 +32,7 @@ public class Features_Activity extends AppCompatActivity {
         mNextButton.setTypeface(cool);
         FeaturesArrayAdapter adapter = new FeaturesArrayAdapter(this, android.R.layout.simple_list_item_1, features);
         mListView.setAdapter(adapter);
-//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String feature = ((TextView)view).getText().toString();
-//                Toast.makeText(Features_Activity.this, feature,Toast.LENGTH_LONG).show();
-//            }
-//        });
+
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
