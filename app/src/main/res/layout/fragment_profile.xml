@@ -45,9 +45,9 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/textLight"
+            android:background="@color/colorPrimaryDark"
             android:text="Log Out"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/textLight"
             android:id="@+id/logOutButton"
             />
     </LinearLayout>

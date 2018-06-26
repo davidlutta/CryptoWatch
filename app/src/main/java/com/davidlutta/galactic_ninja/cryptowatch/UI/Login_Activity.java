@@ -40,8 +40,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
     @Bind(R.id.passwordEditText) EditText mPassword;
     @Bind(R.id.loginButton) Button mLogin;
     @Bind(R.id.RegisterTextView) TextView mRegister;
-    private GoogleApiClient googleApiClient;
-    private static final int REQ_CODE = 9001;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private ProgressDialog mAuthProgressDialog;
@@ -51,11 +49,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_);
         ButterKnife.bind(this);
-        mGoogleSignIn.setOnClickListener(this);
-
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
-
         Typeface cool = Typeface.createFromAsset(getAssets(),"fonts/coolvetica.ttf");
         mLogoName.setTypeface(cool);
         mEmail.setTypeface(cool);
@@ -93,13 +86,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.googleSignIn:
-                signIn();
-                Intent intent = new Intent(Login_Activity.this, FeedActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-
             case R.id.RegisterTextView:
                 Intent intent1 = new Intent(Login_Activity.this, CreateAccount.class);
                 startActivity(intent1);
@@ -145,11 +131,6 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void signIn(){
-        Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-        startActivityForResult(intent,REQ_CODE);
-    }
-
     @Override
     public void onStart(){
         super.onStart();
@@ -164,35 +145,4 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private void signOut(){
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-
-            }
-        });
-    }
-
-    //Handles The Result we get
-    private void handleResult(GoogleSignInResult result){
-        if (result.isSuccess()){
-            GoogleSignInAccount account = result.getSignInAccount();
-            String name = account.getDisplayName();
-            String email = account.getEmail();
-        }
-        else {
-            Toast.makeText(Login_Activity.this,"There seems to be a problem",Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode==REQ_CODE){
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            handleResult(result);
-        }
-    }
 }

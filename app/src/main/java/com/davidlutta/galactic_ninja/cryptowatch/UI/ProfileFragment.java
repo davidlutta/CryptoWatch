@@ -1,6 +1,7 @@
 package com.davidlutta.galactic_ninja.cryptowatch.UI;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,9 +24,10 @@ import butterknife.OnClick;
  */
 public class ProfileFragment extends Fragment {
     @Bind(R.id.logOutButton) Button mLogOutButton;
-    @Bind(R.id.nameTextView)
-    TextView mUserName;
+    @Bind(R.id.nameTextView) TextView mUserName;
     @Bind(R.id.EmailTextView) TextView mUserEmail;
+    private ProgressDialog mAuthProgressDialog;
+
 
     public static ProfileFragment newInstance(){
         ProfileFragment fragment = new ProfileFragment();
@@ -56,20 +58,18 @@ public class ProfileFragment extends Fragment {
         return root;
     }
 
-//    @Override
-//    public void onClick(View view){
-//        switch (view.getId()){
-//            case R.id.logOutButton:
-//                logOut();
-//                break;
-//        }
-//    }
-//
+    private void LogOutProgressDialog(){
+        mAuthProgressDialog = new ProgressDialog(getContext());
+        mAuthProgressDialog.setTitle("Logging Out.....");
+        mAuthProgressDialog.setMessage("We will miss You...");
+        mAuthProgressDialog.setCancelable(false);
+    }
 
     @OnClick(R.id.logOutButton) void logOut(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getActivity(), Login_Activity.class);
         startActivity(intent);
+        LogOutProgressDialog();
     }
 
 
