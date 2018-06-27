@@ -93,17 +93,10 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
-//        FirebaseAuth auth = FirebaseAuth.getInstance();
-//        FirebaseUser user = auth.getCurrentUser();
-//        user.sendEmailVerification()
-//                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        if (task.isSuccessful()) {
-//                            Toast.makeText(CreateAccount.this,"Email Sent", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+
+        }
     }
 
     private void createAuthStateListener(){
@@ -112,6 +105,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     final FirebaseUser user = firebaseAuth.getCurrentUser();
                     if (user != null) {
+                        sendVerificationEmail();
                         Intent intent = new Intent(CreateAccount.this,FeedActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -119,6 +113,19 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                     }
                 }
             };
+    }
+
+    private void sendVerificationEmail() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user.sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(CreateAccount.this, "Email Sent", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     @Override

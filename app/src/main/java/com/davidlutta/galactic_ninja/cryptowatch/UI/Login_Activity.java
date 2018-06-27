@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,8 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private ProgressDialog mAuthProgressDialog;
 
+    public static final String TAG = Login_Activity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,20 +57,19 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user != null){
-                    Intent intent = new Intent(Login_Activity.this, FeedActivity.class);
-                    startActivity(intent);
-                    finish();
-
+                        Intent intent = new Intent(Login_Activity.this, FeedActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
-            }
-        };
+            };
     }
 
     private void createAuthProgressDialog(){
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading.....");
         mAuthProgressDialog.setMessage("Authenticating...");
-        mAuthProgressDialog.setCancelable(false);
+        mAuthProgressDialog.setCancelable(true);
     }
 
     @Override
@@ -110,6 +112,8 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
                         if (!task.isSuccessful()){
                             Toast.makeText(Login_Activity.this,"Authentification Failed.",Toast.LENGTH_SHORT).show();
                         }
+                        mAuthProgressDialog.dismiss();
+                        Toast.makeText(Login_Activity.this, "Please Verify Email", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

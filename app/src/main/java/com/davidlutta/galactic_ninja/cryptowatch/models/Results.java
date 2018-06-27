@@ -40,6 +40,16 @@ public class Results {
     @Expose
      Long lastUpdated;
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
+    private String pushId;
+
     /**
      * No args constructor for use in serialization
      * 

@@ -9,9 +9,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.davidlutta.galactic_ninja.cryptowatch.Constants;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -21,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurrencyDetailFragment extends Fragment {
+public class CurrencyDetailFragment extends Fragment implements View.OnClickListener{
     @Bind(R.id.CurrencyNameTextView) TextView mCurrencyName;
     @Bind(R.id.rankTextView) TextView mRank;
     @Bind(R.id.priceTextView) TextView mPrice;
@@ -32,7 +38,7 @@ public class CurrencyDetailFragment extends Fragment {
     @Bind(R.id.percWeekTextView) TextView mPercWeek;
     @Bind(R.id.UpdateTextView) TextView mTime;
     @Bind(R.id.symbol) ImageView mSymbol;
-
+    @Bind(R.id.saveButton) Button mSaveButton;
     private Results mResults;
 
     public CurrencyDetailFragment() {
@@ -61,6 +67,8 @@ public class CurrencyDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_currency_detail, container, false);
         ButterKnife.bind(this, view);
+
+        mSaveButton.setOnClickListener(this);
         mCurrencyName.setText(mResults.getName());
         mRank.setText("Rank: "+mResults.getRank());
         mPrice.setText("Price: $"+mResults.getQuotes().getUSD().getPrice());
@@ -73,5 +81,25 @@ public class CurrencyDetailFragment extends Fragment {
         return view;
 
     }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.saveButton:
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+                DatabaseReference coinRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_CHILD_SAVED_COINS)
+                        .child(uid);
+                DatabaseReference pushRef = coinRef.push();
+                String pushId = pushRef.getKey();
+                mResults.setPushId(pushId);
+                pushRef.setValue(mResults);
+
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+            break;
+        }
+        }
 
 }

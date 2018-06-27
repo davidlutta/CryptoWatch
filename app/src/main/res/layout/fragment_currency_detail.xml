@@ -59,8 +59,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/CurrencyNameTextView"
                 android:text="Price in USD"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="italic" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/MaximumSupTextView"
@@ -72,8 +71,7 @@
                 android:gravity="center"
                 android:text="Maximum Supply"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/CirculatingSupTextView"
@@ -85,8 +83,7 @@
                 android:gravity="center"
                 android:text="Circulating Supply"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/UpdateTextView"
@@ -98,8 +95,7 @@
                 android:gravity="center"
                 android:text="Last Update"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:textSize="15sp" />
 
         </RelativeLayout>
 
@@ -110,7 +106,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/saveCurrencyButton"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -154,6 +149,17 @@
 
 
             </LinearLayout>
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                android:background="@color/colorPrimaryDark"
+                android:text="Save Coin"
+                android:textColor="@color/textLight"
+                android:textStyle="bold"
+                />
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
