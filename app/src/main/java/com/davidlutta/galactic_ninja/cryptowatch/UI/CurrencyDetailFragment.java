@@ -90,7 +90,7 @@ public class CurrencyDetailFragment extends Fragment implements View.OnClickList
                 String uid = user.getUid();
                 DatabaseReference coinRef = FirebaseDatabase
                         .getInstance()
-                        .getReference(Constants.FIREBASE_CHILD_SAVED_COINS)
+                        .getReference(Constants.FIREBASE_CHILD_COIN)
                         .child(uid);
                 DatabaseReference pushRef = coinRef.push();
                 String pushId = pushRef.getKey();

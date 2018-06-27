@@ -19,12 +19,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.Search_Activity" />
         </activity>
-        <activity android:name=".UI.FeedActivity"
-            android:theme="@style/NoActionBarTheme"
-            />
-        <activity android:name=".UI.Login_Activity"
-            android:theme="@style/NoActionBarTheme"
-            >
+        <activity
+            android:name=".UI.FeedActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".UI.Login_Activity"
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,15 +36,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.davidlutta.galactic_ninja.cryptowatch.UI.FeedActivity" />
         </activity>
-        <activity android:name=".UI.CreateAccount"
-            android:theme="@style/NoActionBarTheme"
-            />
-        <activity android:name=".UI.NewsActivity"
-            android:theme="@style/NoActionBarTheme"
-            />
-        <activity android:name=".UI.ProfileActivity"
-            android:theme="@style/NoActionBarTheme"
-            ></activity>
+        <activity
+            android:name=".UI.CreateAccount"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".UI.NewsActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".UI.ProfileActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".UI.SavedCoinsActivity"></activity>
     </application>
 
 </manifest>
