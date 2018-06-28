@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,10 +23,11 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Bind(R.id.logOutButton) Button mLogOutButton;
     @Bind(R.id.nameTextView) TextView mUserName;
     @Bind(R.id.EmailTextView) TextView mUserEmail;
+    @Bind(R.id.saveButton) Button savedItemsButton;
     private ProgressDialog mAuthProgressDialog;
 
 
@@ -55,6 +57,7 @@ public class ProfileFragment extends Fragment {
             mUserName.setText(name);
             mUserEmail.setText(email);
         }
+        savedItemsButton.setOnClickListener(this);
         return root;
     }
 
@@ -72,6 +75,15 @@ public class ProfileFragment extends Fragment {
         LogOutProgressDialog();
     }
 
+    @Override
+    public void onClick(View view){
+
+        if (view == savedItemsButton){
+            Toast.makeText(getActivity(), "SASA", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), saved_fragment.class);
+            startActivity(intent);
+        }
+    }
 
 
 }

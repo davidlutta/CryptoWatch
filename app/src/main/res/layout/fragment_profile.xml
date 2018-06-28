@@ -50,7 +50,18 @@
             android:textColor="@color/textLight"
             android:id="@+id/logOutButton"
             />
+
+
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:text="Saved Items"
+        android:textColor="@color/textLight"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/saveButton"
+        />
 
 </RelativeLayout>
