@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters.FireBaseViewHolder;
+import com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters.FirebaseResultListAdapter;
 import com.davidlutta.galactic_ninja.cryptowatch.Constants;
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Results;
@@ -25,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class SavedCoinsActivity extends AppCompatActivity {
-    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView2) RecyclerView mRecyclerView;
     private DatabaseReference mDatabaseReference;
     private FirebaseRecyclerAdapter mFirebaseRecyclerAdapter;
 
@@ -33,7 +34,7 @@ public class SavedCoinsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.);
+        setContentView(R.layout.activity_saved_coins);
 
         ButterKnife.bind(this);
 
@@ -52,24 +53,7 @@ public class SavedCoinsActivity extends AppCompatActivity {
         FirebaseRecyclerOptions<Results> options = new FirebaseRecyclerOptions.Builder<Results>()
                 .setQuery(query, Results.class)
                 .build();
-        mFirebaseRecyclerAdapter
-                = new FirebaseRecyclerAdapter<Results, FireBaseViewHolder>
-                (options) {
-            @NonNull
-            @Override
-            public FireBaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.style_card,parent,false);
-                return new FireBaseViewHolder(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull FireBaseViewHolder holder, int position, @NonNull Results model) {
-                holder.bindCoins(model);
-
-            }
-
-        };
+        mFirebaseRecyclerAdapter = new FirebaseResultListAdapter(options);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseRecyclerAdapter);
@@ -79,5 +63,11 @@ public class SavedCoinsActivity extends AppCompatActivity {
     protected void onStop(){
         super.onStop();
         mFirebaseRecyclerAdapter.stopListening();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseRecyclerAdapter.startListening();
     }
 }

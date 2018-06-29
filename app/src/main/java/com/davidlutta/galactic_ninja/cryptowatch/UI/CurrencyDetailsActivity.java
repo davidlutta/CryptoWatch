@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CurrencyDetailsActivity extends AppCompatActivity {
+public class
+CurrencyDetailsActivity extends AppCompatActivity {
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private CurrencyPageAdapter mCurrencyPageAdapter;
     ArrayList<Results> mResults = new ArrayList<>();

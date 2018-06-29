@@ -31,7 +31,7 @@ public class coinMarketService {
                 .url(url)
                 .build();
         Call call = client.newCall(request);
-        call.enqueue((okhttp3.Callback) callback);
+        call.enqueue(callback);
     }
 
     public ArrayList<Results> processResults(Response response) throws IOException {
@@ -54,5 +54,9 @@ public class coinMarketService {
         }
 
         return currencies;
+    }
+
+    public static void cancelAllRequest(){
+//        OkHttpClient.
     }
 }

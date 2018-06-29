@@ -80,8 +80,15 @@ public class HomeFragment extends Fragment {
                     }
                 });
             }
+
+
         });
 
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        coinMarketService.cancelAllRequest();
+    }
 }

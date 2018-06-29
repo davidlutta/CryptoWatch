@@ -80,7 +80,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         if (view == savedItemsButton){
             Toast.makeText(getActivity(), "SASA", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getActivity(), saved_fragment.class);
+            Intent intent = new Intent(getActivity(), SavedCoinsActivity.class);
             startActivity(intent);
         }
     }

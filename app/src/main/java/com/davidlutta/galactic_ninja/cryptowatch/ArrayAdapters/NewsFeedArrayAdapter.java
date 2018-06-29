@@ -2,18 +2,22 @@ package com.davidlutta.galactic_ninja.cryptowatch.ArrayAdapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.davidlutta.galactic_ninja.cryptowatch.R;
 import com.davidlutta.galactic_ninja.cryptowatch.UI.CurrencyDetailsActivity;
 import com.davidlutta.galactic_ninja.cryptowatch.models.Articles;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -45,8 +49,9 @@ public class NewsFeedArrayAdapter extends RecyclerView.Adapter<NewsFeedArrayAdap
     }
 
     public class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @Bind(R.id.ArticleNameTextView) TextView mArticleName;
-
+        @Bind(R.id.image) ImageView mImage;
+        @Bind(R.id.titleTextView) TextView mArticleName;
+        @Bind(R.id.descriptionTextView) TextView mDescription;
         public NewsViewHolder(View itemView){
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -65,7 +70,10 @@ public class NewsFeedArrayAdapter extends RecyclerView.Adapter<NewsFeedArrayAdap
         }
 
         public void bindResults(Articles articlesModel){
+
+            Picasso.with(mContext).load(articlesModel.getUrlToImage()).fit().into(mImage);
             mArticleName.setText(articlesModel.getTitle());
+            mDescription.setText(articlesModel.getDescription());
         }
     }
 }
