@@ -50,7 +50,7 @@ public class NewsApiService {
 
                 Type collectionType = new TypeToken<List<Articles>>(){}.getType();
                 articles = gson.fromJson(resultsJson.toString(),collectionType);
-             }
+              }
 
         } catch (NullPointerException | JSONException | IOException e){
             e.printStackTrace();

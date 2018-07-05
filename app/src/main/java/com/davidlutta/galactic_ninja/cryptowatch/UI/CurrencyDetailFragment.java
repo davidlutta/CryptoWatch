@@ -67,7 +67,6 @@ public class CurrencyDetailFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_currency_detail, container, false);
         ButterKnife.bind(this, view);
-
         mSaveButton.setOnClickListener(this);
         mCurrencyName.setText(mResults.getName());
         mRank.setText("Rank: "+mResults.getRank());
@@ -79,9 +78,7 @@ public class CurrencyDetailFragment extends Fragment implements View.OnClickList
         mPercWeek.setText("Percentage Change Every Week: "+mResults.getQuotes().getUSD().getPercentChange7d()+"%");
         mTime.setText("Last Update: "+mResults.getLastUpdated());
         return view;
-
     }
-
     @Override
     public void onClick(View v){
         switch (v.getId()){
@@ -95,11 +92,9 @@ public class CurrencyDetailFragment extends Fragment implements View.OnClickList
                 DatabaseReference pushRef = coinRef.push();
                 String pushId = pushRef.getKey();
                 mResults.setPushId(pushId);
-                pushRef.setValue(mResults);
-
+                pushRef.setValueAsync(mResults);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
             break;
         }
         }
-
 }

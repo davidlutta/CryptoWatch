@@ -42,28 +42,28 @@ public class FireBaseViewHolder extends RecyclerView.ViewHolder implements View.
         rankTextView.setText("Rank: "+results.getRank());
 }
 
-    @Override
-    public void onClick(View view){
-        final ArrayList<Results> results = new ArrayList<>();
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_COIN);
-        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    results.add(snapshot.getValue(Results.class));
+        @Override
+        public void onClick(View view){
+            final ArrayList<Results> results = new ArrayList<>();
+            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_COIN);
+            dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                        results.add(snapshot.getValue(Results.class));
+
+                    }
+                    int itemPostion = getLayoutPosition();
+                    Intent intent = new Intent(mContext, CurrencyDetailsActivity.class);
+                    intent.putExtra("position", itemPostion + "");
+                    intent.putExtra("results", Parcels.wrap(results));
+                    mContext.startActivity(intent);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
                 }
-                int itemPostion = getLayoutPosition();
-                Intent intent = new Intent(mContext, CurrencyDetailsActivity.class);
-                intent.putExtra("position", itemPostion + "");
-                intent.putExtra("results", Parcels.wrap(results));
-                mContext.startActivity(intent);
+            });
             }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        }
 }
